@@ -81,13 +81,100 @@ While data preparation lives in the SQL layer, all business metrics—such as re
 
 ## 📊 Dashboard Design Principles
 
-- **Heatmap-style cohort matrix** for instant pattern recognition
-- **Metric switcher** (Retention %, Revenue Retention, Churn %)
-- **Minimal slicers** to avoid over-filtering cohorts
-- **Mobile-optimized layout**
-- Zero clutter, maximum signal
+## 📊 Dashboard Highlights & Features
+
+### 🔹 Multi-Page Navigation
+The dashboard is organized into two focused views:
+- **Cohorts** – customer retention, churn, and revenue behavior over time
+- **Products** – product-level performance, pricing, and demand drivers
+
+Users can switch between views using in-report navigation buttons.
 
 ---
+
+### 🔹 Interactive KPI Summary
+Top-level KPI cards provide a quick snapshot of:
+- Active users
+- Total revenue
+- Orders and buyers
+- Repeat cohort count and percentage
+- Average revenue per user (ARPU)
+- Average order value (AOV) and average selling price (ASP)
+
+Each KPI responds dynamically to slicers and filters.
+
+---
+
+### 🔹 Cohort Matrix with Metric Switcher
+A dynamic cohort matrix allows users to switch between:
+- **Retention %**
+- **Cohort users**
+- **Churn %**
+- **Revenue retention**
+
+This enables multiple lifecycle perspectives without duplicating visuals or pages.
+
+---
+
+### 🔹 Early Retention Slope Analysis
+A dedicated visual tracks **early retention slope** for each cohort, highlighting how customer engagement changes in the first few months after acquisition.
+
+This feature helps compare cohort performance beyond static retention snapshots.
+
+---
+
+### 🔹 Customer Type Comparison
+The dashboard includes side-by-side comparisons between:
+- One-time customers
+- Repeat customers
+
+Metrics such as total revenue and average revenue per user update dynamically based on selections.
+
+---
+
+### 🔹 Product Performance Deep Dive
+The Products view includes:
+- Top products by revenue and orders
+- Product-level AOV and ASP
+- Rating category and price category breakdowns
+- Revenue contribution by price segment
+
+This allows users to move seamlessly from customer-level to product-level analysis.
+
+---
+
+### 🔹 Key Influencer Analysis
+A built-in **Key Influencers visual** helps explore which factors are most associated with revenue changes, such as:
+- Average order value
+- Units sold
+- Selling price
+
+This enables exploratory analysis without writing additional queries.
+
+---
+
+### 🔹 Flexible Filtering & Slicing
+The dashboard supports interactive filtering by:
+- Year
+- Customer type
+- Product category
+
+All visuals remain synchronized, enabling focused analysis without losing context.
+
+---
+
+### 🔹 Governed, Query-in-Place Architecture
+The dashboard connects directly to a **Microsoft Fabric Lakehouse**, querying data in place via the SQL endpoint.  
+No data is imported or duplicated, ensuring consistency and governance compliance.
+
+---
+
+## 🧩 Designed For
+- Business users exploring trends interactively  
+- Analysts validating cohort behavior  
+- Stakeholders comparing customer and product performance  
+
+The dashboard is built to support **exploration, comparison, and drill-down**, not just static reporting.
 
 ## 🔑 Key Insights
 
