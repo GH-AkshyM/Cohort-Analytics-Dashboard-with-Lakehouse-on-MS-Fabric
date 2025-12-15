@@ -42,17 +42,17 @@ This approach enabled a lifecycle-driven understanding of growth and revealed st
 ## 🧠 Why Cohort Analysis?
 
 Cohort analysis reveals insights that aggregate metrics hide:
-| What Aggregate KPIs Suggest | What Cohort Analysis Reveals |
-|----------------------------|-----------------------------|
-| Overall revenue looks stable month over month | Newer customer cohorts are churning faster than older ones |
+| What Aggregate KPIs Suggest | What Cohort Analysis Reveals             |
+|----------------------------|-----------------------------            |
+| Overall revenue looks stable month over month | Newer customer cohorts are churning faster than older ones       |
 | Conversion rates appear healthy | Customers are dropping off earlier in their lifecycle |
 | Growth appears flat but acceptable | Revenue is coming from a smaller group of repeat customers |
-| Acquisition performance seems unchanged | Customer quality is declining over time |
+| Acquisition performance seems unchanged | Customer quality is declining over time                            |
 
 
 By grouping customers based on their **first purchase month**, we can objectively evaluate **customer quality, retention health, and revenue durability**.
 
----
+
 
 ## 🗂️ Cohort Definition
 
@@ -63,7 +63,7 @@ By grouping customers based on their **first purchase month**, we can objectivel
 Each cohort answers:
 > “How do customers acquired in *Month X* behave over time?”
 
----
+
 ## 🏗️ Data Architecture & Governance (Microsoft Fabric Lakehouse)
 
 
@@ -76,15 +76,6 @@ There was a strict requirement that the data **must not leave the platform**. Be
 ### How Analytics Were Built
 
 While data preparation lives in the SQL layer, all business metrics—such as retention, churn, and revenue calculations—are implemented in **DAX** within Power BI. This keeps analytical logic flexible and close to the reporting layer, while the underlying data remains centrally governed.
-
-### Why This Approach Was Chosen
-
-This setup reflects a common enterprise pattern:
-- **SQL** is used for reliable, repeatable data preparation
-- **DAX** is used for dynamic, business-facing metrics
-- **No data duplication** occurs across systems
-
-The result is a solution that respects data governance constraints while still enabling detailed cohort analysis and lifecycle insights.
 
 
 
