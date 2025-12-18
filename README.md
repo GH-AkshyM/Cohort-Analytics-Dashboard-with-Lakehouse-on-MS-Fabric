@@ -43,7 +43,7 @@ At the aggregate level, traditional KPI dashboards—**Revenue, Orders, Conversi
 [(Back to top)](#table-of-contents)
 
 
-### 📌Key Business Questions
+## 📌Key Business Questions
 
 To make better decisions around retention, marketing spend, and long-term growth, the team needed clear answers to some fundamental questions:
 
@@ -56,7 +56,7 @@ To make better decisions around retention, marketing spend, and long-term growth
 [(Back to top)](#table-of-contents)
 
 
-### 🛍️Analytical Approach
+## 🛍️Analytical Approach
 
 To address these gaps, I built a **Customer Cohort Analysis framework** that shifts the focus from aggregate monthly KPIs to **customer behavior over time**.
 
