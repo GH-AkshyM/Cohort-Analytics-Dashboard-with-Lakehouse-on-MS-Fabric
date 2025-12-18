@@ -56,8 +56,7 @@ To make better decisions around retention, marketing spend, and long-term growth
 [(Back to top)](#table-of-contents)
 
 
-## 🛍️Analytical Approach
-
+## Analytical Approach
 To address these gaps, I built a **Customer Cohort Analysis framework** that shifts the focus from aggregate monthly KPIs to **customer behavior over time**.
 
 Customers were grouped into cohorts based on their **first purchase month** and tracked across subsequent periods to analyze:
