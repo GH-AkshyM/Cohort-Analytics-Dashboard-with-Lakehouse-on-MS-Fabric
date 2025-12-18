@@ -1,6 +1,32 @@
 # Cohort Analytics Dashboard with Lakehouse on MS-Fabric
 
-## 🔍 Business Problem
+## 📌 Project Overview
+
+While exploring new datasets and project ideas, I came across this e-commerce dataset on Kaggle. Rather than treating it as a standard exploratory exercise, I used it as an opportunity to apply a **real-world analytics approach** and put my own spin on the problem.
+
+The goal of this project was to move beyond static reporting and build an **end-to-end analytical solution** that reflects how enterprise dashboards are designed and consumed. To do this, the dataset was loaded into a **Microsoft Fabric Lakehouse** and analyzed using **DirectQuery**, allowing all transformations and calculations to be performed in a governed, centralized environment without importing data into Power BI.
+
+This project was also designed to **deliberately practice and demonstrate PL-300 concepts**, including data modeling, DAX-based business metrics, cohort analysis, retention and churn measurement, and performance-aware design. Instead of focusing on surface-level KPIs, the analysis emphasizes **customer lifecycle behavior, revenue quality, and funnel efficiency**, which are critical for modern e-commerce decision-making.
+
+By combining a public dataset with an enterprise-style architecture and advanced analytical techniques, this project showcases how Power BI can be used not just to visualize data, but to **answer meaningful business questions at scale**.
+
+*Thank you for taking the time to explore this project. It represents work I’m genuinely proud of.*
+
+
+## 📚Table of Contents:
+|**No.**  |**Section**|
+|:-: | :------------ | 
+|1.   |  [Business Problem](#Business-problem)                              |
+|2.   |  [Key Business Questions](#key-business-questions)                              |
+|3.   |  [Analytical Approach](#analytical-approach)                              |
+|4.   |  [Why Cohort Analysis?](#why=cohort-analysis?)                              |
+|5.   |  [Data Architecture And Governance](#data-architecture-and-governance)                              |
+|6.   |  [Dashboard Highlights And Features](#dashboard-highlights-and-features)                              |
+|7.   |  [Key Insights](#key-insights)                              |
+|8.   |  [Business Recommendations](#business-recommendations)                              |
+
+
+## 🔍Business Problem
 
 **QuantMart** is a fictional mid-scale **e-commerce retailer** operating in the daily-use and lifestyle products segment. The business relies on a mix of paid marketing, organic traffic, and repeat customers to drive growth.
 
@@ -14,7 +40,10 @@ Over multiple months, QuantMart maintained **stable website traffic and consiste
 
 At the aggregate level, traditional KPI dashboards—**Revenue, Orders, Conversion Rate, and Traffic**—continued to appear stable. These metrics explained *what* was happening, but failed to explain *why* long-term performance was weakening.
 
-### Key Business Questions
+[(Back to top)](#table-of-contents)
+
+
+### 📌Key Business Questions
 
 To make better decisions around retention, marketing spend, and long-term growth, the team needed clear answers to some fundamental questions:
 
@@ -24,7 +53,10 @@ To make better decisions around retention, marketing spend, and long-term growth
 - **Are the customers we’re acquiring today better or worse than the ones we acquired in the past?**
 
 
-### Analytical Approach
+[(Back to top)](#table-of-contents)
+
+
+### 🛍️Analytical Approach
 
 To address these gaps, I built a **Customer Cohort Analysis framework** that shifts the focus from aggregate monthly KPIs to **customer behavior over time**.
 
@@ -37,13 +69,14 @@ Customers were grouped into cohorts based on their **first purchase month** and 
 
 This approach enabled a lifecycle-driven understanding of growth and revealed structural retention issues that traditional dashboards could not capture.
 
+[(Back to top)](#table-of-contents)
 
 
-## 🧠 Why Cohort Analysis?
+## 🧠Why Cohort Analysis?
 
 Cohort analysis reveals insights that aggregate metrics hide:
-| What Aggregate KPIs Suggest | What Cohort Analysis Reveals             |
-|----------------------------|-----------------------------            |
+| What Aggregate KPIs Suggest | What Cohort Analysis Might Reveal             |
+|-|--            |
 | Overall revenue looks stable month over month | Newer customer cohorts are churning faster than older ones       |
 | Conversion rates appear healthy | Customers are dropping off earlier in their lifecycle |
 | Growth appears flat but acceptable | Revenue is coming from a smaller group of repeat customers |
@@ -52,9 +85,10 @@ Cohort analysis reveals insights that aggregate metrics hide:
 
 By grouping customers based on their **first purchase month**, we can objectively evaluate **customer quality, retention health, and revenue durability**.
 
+[(Back to top)](#table-of-contents)
 
 
-## 🗂️ Cohort Definition
+## 🗂️Cohort Definition
 
 - **Cohort Type:** Acquisition-based
 - **Cohort Key:** Customer First Purchase Month
@@ -63,8 +97,10 @@ By grouping customers based on their **first purchase month**, we can objectivel
 Each cohort answers:
 > “How do customers acquired in *Month X* behave over time?”
 
+[(Back to top)](#table-of-contents)
 
-## 🏗️ Data Architecture & Governance (Microsoft Fabric Lakehouse)
+
+## 🏗️Data Architecture And Governance
 
 
 This project uses a **Microsoft Fabric Lakehouse** with a clear separation between **data preparation** and **analytics**.
@@ -73,12 +109,19 @@ All data cleaning, shaping, and transformations were handled through the **Lakeh
 
 There was a strict requirement that the data **must not leave the platform**. Because of this, importing data into Power BI or creating local extracts was not an option. Instead, Power BI connects directly to the Lakehouse and queries the data **in place**.
 
+All SQL queries were written with **query folding in mind**, and reusable **views were created wherever complex logic was required**, avoiding heavy CTE usage in the reporting layer to ensure better performance and maintainability.
+
+You can find the SQL queries I used here: [SQL Queries](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/tree/main/SQL%20Queries)
+
+
 ### How Analytics Were Built
 
 While data preparation lives in the SQL layer, all business metrics—such as retention, churn, and revenue calculations—are implemented in **DAX** within Power BI. This keeps analytical logic flexible and close to the reporting layer, while the underlying data remains centrally governed.
 
+[(Back to top)](#table-of-contents)
 
-## 📊 Dashboard Highlights & Features
+
+## 📊Dashboard Highlights And Features
 
 
 
@@ -91,14 +134,14 @@ A dynamic cohort matrix allows users to switch between:
 
 This enables multiple lifecycle perspectives without duplicating visuals or pages.
 
----
+
 
 ### 🔹 Early Retention Slope Analysis
 A dedicated visual tracks **early retention slope** for each cohort, highlighting how customer engagement changes in the first few months after acquisition.
 
 This feature helps compare cohort performance beyond static retention snapshots.
 
----
+
 
 ### 🔹 Customer Type Comparison
 The dashboard includes side-by-side comparisons between:
@@ -130,7 +173,10 @@ This enables exploratory analysis without writing additional queries.
 
 ![Products Page](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Products%20Page.gif)
 
-## 🔑 Key Insights
+[(Back to top)](#table-of-contents)
+
+
+## 🔑Key Insights
 
 
 ### 1. Early Retention Is the Biggest Structural Weakness
@@ -218,58 +264,41 @@ The business does **not appear to have a demand problem**. Customers are finding
 
 At the same time, revenue is becoming increasingly **concentrated among a small group of high-value repeat customers**. Without improvements to early retention, scaling acquisition would mostly increase churn rather than create sustainable growth.
 
+[(Back to top)](#table-of-contents)
 
-## 💡 Business Recommendations
+
+## 💡Business Recommendations
+
+### ▶️Fix the First-Repeat Moment, Not Traffic Volume
+
+The largest losses in both retention and revenue occur immediately after the first purchase. Instead of increasing acquisition spend, focus on improving **first-repeat conversion within the first 7–30 days** by strengthening things like post-purchase experience, delivery reliability, and repeat-purchase incentives. 
+
+Small improvements at this stage will compound more effectively than scaling top-of-funnel traffic in a high-churn environment.
 
 
-### 1. Fix the First-Repeat Moment, Not Traffic Volume
-The largest revenue and retention losses occur immediately after the first purchase. Rather than increasing acquisition spend, prioritize **first-repeat conversion within 7–30 days** by improving post-purchase experience, delivery reliability, and repeat-purchase incentives.
+### ▶️Design the Funnel Around High-Value Customers
 
-**Why this matters:**  
-Even a small uplift in first-repeat rate will compound revenue more effectively than scaling top-of-funnel traffic in a high-churn environment.
+Revenue retention consistently outperforms user retention, indicating that a **small subset of customers drives a disproportionate share of long-term value**. 
 
----
+These customers should be identified early and protected through:
+- Loyalty tagging
+- Personalized offers
+- Prioritized fulfillment.
 
-### 2. Design the Funnel Around High-Value Customers
-Revenue retention consistently outperforms user retention, proving that a **small subset of customers drives long-term value**. Identify and actively protect these high-value customers through early loyalty tagging, personalized offers, and prioritized fulfillment.
+Treating high-value users as a distinct segment improves revenue resilience and reduces over-reliance on acquisition volume.
 
-**Why this matters:**  
-Shifting focus from average customers to high-value segments reduces revenue concentration risk while improving LTV predictability.
+### ▶️Make Mid-Range Pricing the Core Growth Engine
 
----
+Mid-range products contribute the highest share of revenue, outperforming both budget and premium segments. This price band should be positioned as the primary growth engine, supported by clear value communication, product comparisons, and repeat-purchase nudges. It offers the best balance between scale, margin, and customer comfort.
 
-### 3. Optimize for Value Expansion, Not Just Conversion
-Revenue movements are driven primarily by **Average Order Value**, not transaction volume. Invest in pricing strategy, product bundling, cross-sell logic, and intelligent recommendations to increase basket value without increasing traffic dependency.
 
-**Why this matters:**  
-Value-based growth scales more efficiently and is less sensitive to rising acquisition costs in competitive e-commerce markets.
 
----
+### ▶️ Treat Early Churn as a Lifecycle Experience Problem
 
-### 4. Double Down on Mid-Range Pricing as the Core Revenue Engine
-Mid-range products contribute the highest share of revenue, outperforming both budget and premium segments. Position this segment as the **default growth engine**, supported by clear value messaging, comparisons, and repeat-purchase incentives.
+Churn consistently spikes immediately after the first purchase and then stabilizes across cohorts, indicating that losses are driven by early experience rather than marketing performance. Instead of addressing churn through promotions, churn patterns should be used to prioritize improvements in checkout flow, fulfillment reliability, returns, and post-purchase communication.
 
-**Why this matters:**  
-Mid-range pricing balances affordability and margin, making it the most scalable segment for sustainable growth.
+Reducing friction at these early touchpoints directly addresses the stage where the majority of customer value is lost and has a greater long-term impact than increasing short-term promotional spend.
 
----
 
-### 5. Treat Churn as a Product Signal, Not a Marketing Metric
-Persistently high churn across cohorts indicates structural experience gaps rather than campaign inefficiencies. Use churn patterns to inform improvements in checkout UX, delivery SLAs, returns, and customer communication rather than increasing promotional spend.
-
-**Why this matters:**  
-Reducing friction in the core experience delivers longer-lasting impact than short-term promotional fixes.
-
----
-
-### 6. Shift Measurement From Growth to Efficiency
-Adopt lifecycle-focused KPIs such as **first-repeat conversion rate, revenue retention, and early retention slope**, instead of relying solely on total revenue or traffic growth.
-
-**Why this matters:**  
-In 2026, competitive advantage comes from **efficient growth**, not raw scale.
-
----
-
-### 🎯 Strategic Takeaway
-Sustainable growth for this e-commerce business will come from **improving early customer experience, expanding value per customer, and protecting high-value users**, rather than increasing acquisition volume. This approach aligns growth with profitability, resilience, and long-term customer equity.
+[(Back to top)](#table-of-contents)
 
