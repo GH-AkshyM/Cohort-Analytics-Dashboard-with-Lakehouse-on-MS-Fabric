@@ -2,11 +2,11 @@
 
 ## 🔍 Business Problem
 
-**UrbanBasket** is a fictional mid-scale **e-commerce retailer** operating in the daily-use and lifestyle products segment. The business relies on a mix of paid marketing, organic traffic, and repeat customers to drive growth.
+**QuantMart** is a fictional mid-scale **e-commerce retailer** operating in the daily-use and lifestyle products segment. The business relies on a mix of paid marketing, organic traffic, and repeat customers to drive growth.
 
 The dataset used in this project is **synthetically generated (sourced from Kaggle)** and represents realistic e-commerce transaction behavior, including customer acquisition, repeat purchases, and revenue patterns typically observed in production systems.
 
-Over multiple months, UrbanBasket maintained **stable website traffic and consistent acquisition activity**. However, leadership observed:
+Over multiple months, QuantMart maintained **stable website traffic and consistent acquisition activity**. However, leadership observed:
 
 - **Flattening revenue growth**
 - **Declining contribution from repeat customers**
