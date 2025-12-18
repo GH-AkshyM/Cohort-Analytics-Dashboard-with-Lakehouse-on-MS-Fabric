@@ -8,6 +8,8 @@ The goal of this project was to move beyond static reporting and build an **end-
 
 By combining a public dataset with an enterprise-style architecture and advanced analytical techniques, this project showcases how Power BI can be used not just to visualize data, but to **answer meaningful business questions at scale**.
 
+You can find the link to Kaggle dataset [here.](https://www.kaggle.com/datasets/abhayayare/e-commerce-dataset)
+
 *Thank you for taking the time to explore this project. It represents work I’m genuinely proud of.*
 
 
