@@ -70,7 +70,7 @@ This approach enabled a lifecycle-driven understanding of growth and revealed st
 [(Back to top)](#table-of-contents)
 
 
-## 💡Why Cohort Analysis?
+### 💡Why Cohort Analysis?
 
 Cohort analysis reveals insights that aggregate metrics hide:
 | What Aggregate KPIs Suggest | What Cohort Analysis Might Reveal             |
@@ -86,7 +86,7 @@ By grouping customers based on their **first purchase month**, we can objectivel
 [(Back to top)](#table-of-contents)
 
 
-## 🗂️Cohort Definition
+### 🗂️Cohort Definition
 
 - **Cohort Type:** Acquisition-based
 - **Cohort Key:** Customer First Purchase Month
