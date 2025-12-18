@@ -4,9 +4,7 @@
 
 While exploring new datasets and project ideas, I came across this e-commerce dataset on Kaggle. Rather than treating it as a standard exploratory exercise, I used it as an opportunity to apply a **real-world analytics approach** and put my own spin on the problem.
 
-The goal of this project was to move beyond static reporting and build an **end-to-end analytical solution** that reflects how enterprise dashboards are designed and consumed. To do this, the dataset was loaded into a **Microsoft Fabric Lakehouse** and analyzed using **DirectQuery**, allowing all transformations and calculations to be performed in a governed, centralized environment without importing data into Power BI.
-
-This project was also designed to **deliberately practice and demonstrate PL-300 concepts**, including data modeling, DAX-based business metrics, cohort analysis, retention and churn measurement, and performance-aware design. Instead of focusing on surface-level KPIs, the analysis emphasizes **customer lifecycle behavior, revenue quality, and funnel efficiency**, which are critical for modern e-commerce decision-making.
+The goal of this project was to move beyond static reporting and build an **end-to-end analytical solution** that reflects how enterprise dashboards are designed and consumed. To do this, the dataset was loaded into a **Microsoft Fabric Lakehouse** and analyzed using **DirectQuery**, allowing all transformations to be performed in a governed, centralized environment without importing data into Power BI.
 
 By combining a public dataset with an enterprise-style architecture and advanced analytical techniques, this project showcases how Power BI can be used not just to visualize data, but to **answer meaningful business questions at scale**.
 
@@ -34,9 +32,9 @@ The dataset used in this project is **synthetically generated (sourced from Kagg
 
 Over multiple months, QuantMart maintained **stable website traffic and consistent acquisition activity**. However, leadership observed:
 
-- **Flattening revenue growth**
-- **Declining contribution from repeat customers**
-- Increasing dependence on **first-time purchases** to meet monthly targets
+- Flattening revenue growth
+- Declining contribution from repeat customers
+- Increasing dependence on first-time purchases to meet monthly targets
 
 At the aggregate level, traditional KPI dashboards—**Revenue, Orders, Conversion Rate, and Traffic**—continued to appear stable. These metrics explained *what* was happening, but failed to explain *why* long-term performance was weakening.
 
@@ -47,10 +45,10 @@ At the aggregate level, traditional KPI dashboards—**Revenue, Orders, Conversi
 
 To make better decisions around retention, marketing spend, and long-term growth, the team needed clear answers to some fundamental questions:
 
-- **Are customers dropping off sooner than they used to?**
-- **Is revenue falling because we’re losing customers, or because existing customers are spending less?**
-- **Which groups of customers stick around and actually create long-term value—and which ones disappear after the first purchase?**
-- **Are the customers we’re acquiring today better or worse than the ones we acquired in the past?**
+- Are customers dropping off sooner than they used to?
+- Is revenue falling because we’re losing customers, or because existing customers are spending less?
+- Which groups of customers stick around and actually create long-term value—and which ones disappear after the first purchase?
+- Are the customers we’re acquiring today better or worse than the ones we acquired in the past?
 
 
 [(Back to top)](#table-of-contents)
@@ -113,6 +111,7 @@ All SQL queries were written with **query folding in mind**, and reusable **view
 
 You can find the SQL queries I used here: [SQL Queries](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/tree/main/SQL%20Queries)
 
+![Lineage](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Workspace%20Lineage.png)
 
 ### How Analytics Were Built
 
@@ -132,14 +131,12 @@ A dynamic cohort matrix allows users to switch between:
 - **Churn %**
 - **Revenue retention**
 
-This enables multiple lifecycle perspectives without duplicating visuals or pages.
 
 
 
 ### 🔹 Early Retention Slope Analysis
 A dedicated visual tracks **early retention slope** for each cohort, highlighting how customer engagement changes in the first few months after acquisition.
 
-This feature helps compare cohort performance beyond static retention snapshots.
 
 
 
@@ -159,7 +156,6 @@ The Products view includes:
 - Rating category and price category breakdowns
 - Revenue contribution by price segment
 
-This allows users to move seamlessly from customer-level to product-level analysis.
 
 
 ### 🔹 Key Influencers Visual
@@ -168,7 +164,6 @@ A built-in **Key Influencers visual** helps explore which factors are most assoc
 - Units sold
 - Selling price
 
-This enables exploratory analysis without writing additional queries.
 
 
 ![Products Page](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Products%20Page.gif)
@@ -216,7 +211,7 @@ This shows that the business is currently **volume-led rather than loyalty-led**
 
 Even a modest improvement in converting one-time buyers into repeat customers would significantly improve revenue efficiency and reduce dependency on constant acquisition.
 
-<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Total%20Revenue.png" >
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Average%20Revenue.png" > <img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Total%20Revenue.png" align=right>
 
 ### 5. Revenue Is Primarily Controlled by Order Value, Not Order Volume
 
@@ -232,7 +227,7 @@ In practical terms, demand exists and customers are placing orders. The bigger c
 
 ### 6. Mid-Range Products Drive the Majority of Revenue
 
-When revenue is broken down by price category, **mid-range and value-priced products contribute the largest share**, clearly outperforming premium and luxury items. This shows where customers are most comfortable spending.
+When revenue is broken down by price category, **mid-range (<$100) and value-priced (<$50) products contribute the largest share**, clearly outperforming premium and luxury items. This shows where customers are most comfortable spending.
 
 Customers appear to be price-aware but not purely bargain-driven. The strongest product–market fit sits in accessible price bands where value feels clear and risk is low. Premium products, on the other hand, don’t scale as effectively without stronger brand trust or loyalty signals to support higher prices.
 
