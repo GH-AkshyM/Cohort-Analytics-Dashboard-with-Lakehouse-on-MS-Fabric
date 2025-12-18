@@ -1,4 +1,4 @@
-# Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric
+# Cohort Analytics Dashboard with Lakehouse on MS-Fabric
 
 ## 🔍 Business Problem
 
@@ -78,32 +78,9 @@ There was a strict requirement that the data **must not leave the platform**. Be
 While data preparation lives in the SQL layer, all business metrics—such as retention, churn, and revenue calculations—are implemented in **DAX** within Power BI. This keeps analytical logic flexible and close to the reporting layer, while the underlying data remains centrally governed.
 
 
-
-## 📊 Dashboard Design Principles
-
 ## 📊 Dashboard Highlights & Features
 
-### 🔹 Multi-Page Navigation
-The dashboard is organized into two focused views:
-- **Cohorts** – customer retention, churn, and revenue behavior over time
-- **Products** – product-level performance, pricing, and demand drivers
 
-Users can switch between views using in-report navigation buttons.
-
----
-
-### 🔹 Interactive KPI Summary
-Top-level KPI cards provide a quick snapshot of:
-- Active users
-- Total revenue
-- Orders and buyers
-- Repeat cohort count and percentage
-- Average revenue per user (ARPU)
-- Average order value (AOV) and average selling price (ASP)
-
-Each KPI responds dynamically to slicers and filters.
-
----
 
 ### 🔹 Cohort Matrix with Metric Switcher
 A dynamic cohort matrix allows users to switch between:
@@ -141,9 +118,8 @@ The Products view includes:
 
 This allows users to move seamlessly from customer-level to product-level analysis.
 
----
 
-### 🔹 Key Influencer Analysis
+### 🔹 Key Influencers Visual
 A built-in **Key Influencers visual** helps explore which factors are most associated with revenue changes, such as:
 - Average order value
 - Units sold
@@ -151,115 +127,133 @@ A built-in **Key Influencers visual** helps explore which factors are most assoc
 
 This enables exploratory analysis without writing additional queries.
 
----
-
-### 🔹 Flexible Filtering & Slicing
-The dashboard supports interactive filtering by:
-- Year
-- Customer type
-- Product category
-
-All visuals remain synchronized, enabling focused analysis without losing context.
-
----
-
-### 🔹 Governed, Query-in-Place Architecture
-The dashboard connects directly to a **Microsoft Fabric Lakehouse**, querying data in place via the SQL endpoint.  
-No data is imported or duplicated, ensuring consistency and governance compliance.
-
----
-
-## 🧩 Designed For
-- Business users exploring trends interactively  
-- Analysts validating cohort behavior  
-- Stakeholders comparing customer and product performance  
-
-The dashboard is built to support **exploration, comparison, and drill-down**, not just static reporting.
 
 ## 🔑 Key Insights
 
-### 🧠 Insight 1: Early-Stage Retention Is the Real Problem
-Most churn happens between **Index 0 → Index 1**, indicating issues immediately after first purchase.
 
-> This signals onboarding, experience, or expectation gaps—not long-term loyalty issues.
+### 1. Early Retention Is the Biggest Structural Weakness
 
----
+Across all cohorts, the biggest drop in retention happens immediately after the first purchase. By Month 1, retention typically falls to **just 4–14%**, and this pattern looks almost identical across different time periods and cohort sizes.
 
-### 🧠 Insight 2: Newer Cohorts Underperform Historical Benchmarks
-Cohorts acquired in recent months show:
-- Lower retention
-- Faster revenue decay
-- Weaker recovery patterns
+This consistency tells us that the problem isn’t seasonal or campaign-related. Instead, it points to a **fundamental gap in the early customer experience**. In simple terms, many customers don’t see enough value or reason to come back after their first order. Factors such as delivery experience, post-purchase communication, perceived pricing, onboarding, or the absence of strong repeat-purchase incentives are likely contributing to this early drop-off.
 
-> Growth efforts are increasing **customer volume**, but **customer quality is declining**.
 
----
 
-### 🧠 Insight 3: Revenue Retention Outperforms Customer Retention
-Revenue drops slower than customer count, indicating:
-- Fewer customers
-- Higher dependency on a small, high-value segment
+### 2. Churn Remains High and Hasn’t Improved Over Time
 
-> This creates **revenue concentration risk**.
+After the initial drop in retention, churn quickly settles in the **88–95% range** and stays there for almost every cohort. What stands out is that newer cohorts behave almost exactly like older ones — there’s no visible improvement in how long customers stick around.
 
----
+This suggests that key parts of the funnel haven’t meaningfully changed over time. Acquisition quality hasn’t improved, post-purchase engagement isn’t influencing repeat behavior, and any optimizations made so far haven’t translated into better retention outcomes.
 
-### 🧠 Insight 4: Retention Stabilizes After a Certain Index
-Customers who survive beyond early churn windows show **stable behavior**.
+High churn by itself isn’t unusual for an e-commerce business, especially one driven by one-time purchases. However, when churn remains this flat across cohorts, it signals that the business isn’t learning or improving fast enough at the funnel level.
 
-> Retention investment should prioritize **early lifecycle interventions**, not late-stage discounts.
+### 3. Revenue Holds Up Better Than Customer Retention
 
----
+Even though most customers don’t return, revenue doesn’t fall off as quickly. Across several cohorts, **15–25% of the original revenue is still being retained** at later stages, despite a much smaller number of active users.
+
+This gap between user retention and revenue retention shows that a **small group of customers is doing most of the heavy lifting**. These customers spend more, return more often, and contribute a disproportionate share of long-term revenue. As a result, looking only at average retention rates understates how healthy the revenue side of the business actually is.
+
+This creates a clear trade-off. On one hand, it’s a strong signal that high-value customers exist and can be nurtured. On the other, it also means revenue is increasingly concentrated in a narrow segment, making the business more exposed if those customers churn.
+
+
+### 4. Repeat Customers Are Far More Valuable, but Underutilized
+
+Repeat customers generate nearly **twice the average revenue per user** compared to one-time buyers. However, the bulk of total revenue still comes from one-time customers simply because there are many more of them.
+
+This shows that the business is currently **volume-led rather than loyalty-led**. Topline growth depends heavily on continuous acquisition, while depth of customer relationships remains limited. As a result, revenue becomes more sensitive to any slowdown in traffic or rising acquisition costs.
+
+Even a modest improvement in converting one-time buyers into repeat customers would significantly improve revenue efficiency and reduce dependency on constant acquisition.
+
+
+### 5. Revenue Moves More With Order Value Than With Demand
+
+The Key Influencers analysis shows that **Average Order Value (AOV)** has the biggest impact on revenue, both when revenue goes up and when it drops. Units sold matter, but they play a secondary role. In practice, changes in pricing, product mix, and basket composition affect revenue more than the sheer number of transactions.
+
+This means revenue performance here is largely **value-driven**, not demand-driven. Traffic and orders are present, but how effectively each order is monetized varies. As a result, strategies like smart bundling, cross-sell, and pricing optimization are likely to have a bigger impact on revenue than simply pushing for more traffic.
+
+
+### 6. Mid-Range Products Drive the Majority of Revenue
+
+When revenue is broken down by price category, **mid-range and value-priced products contribute the largest share**, clearly outperforming premium and luxury items. This shows where customers are most comfortable spending.
+
+Customers appear to be price-aware but not purely bargain-driven. The strongest product–market fit sits in accessible price bands where value feels clear and risk is low. Premium products, on the other hand, don’t scale as effectively without stronger brand trust or loyalty signals to support higher prices.
+
+
+### 7. New Customer Cohorts Are Getting Smaller Over Time
+
+Cohort sizes steadily decline from early 2024 into late 2025, with recent cohorts shrinking to low double-digit and even single-digit user counts. Fewer customers are making it into the cohorts in the first place.
+
+This points to **issues at the bottom of the funnel**, rather than a lack of interest. Potential contributors include lower conversion to completed purchases, stricter order qualification rules, or added friction during checkout and payment. When this is combined with already weak retention, it becomes clear that increasing traffic alone would not meaningfully improve performance.
+
+### 8. Early Retention Lacks Momentum and Is Inconsistent Across Cohorts
+
+The early retention slope (measured between Month 1 and Month 3) shows that **most cohorts fail to build meaningful momentum after the first purchase**. While a few cohorts exhibit mildly positive slopes, the majority remain flat or trend downward, and the magnitude of improvement is generally small.
+
+More importantly, the slopes are **inconsistent across cohorts**. Positive early momentum does not persist in newer cohorts, and there is no clear upward trend over time. This suggests that early retention improvements are **sporadic rather than systematic**, likely driven by isolated factors instead of repeatable lifecycle strategies.
+
+In practical terms, customers who survive the initial drop are not being pulled into a repeat habit. Short-term lifecycle touchpoints — such as post-purchase engagement, timely reminders, replenishment cues, or incentives — are not strong enough to create accelerating repeat behavior. Without early momentum, retention remains fragile and struggles to recover later in the lifecycle.
+
+### 9. Looking Across All Metrics, the Story Is Consistent
+
+When retention, churn, revenue retention, cohort size, pricing, and customer value are viewed together, they all point to the same underlying pattern.
+
+The business does **not appear to have a demand problem**. Customers are finding the site and making purchases. Instead, performance is constrained by **funnel efficiency and early customer experience**, where most value is lost soon after the first transaction.
+
+At the same time, revenue is becoming increasingly **concentrated among a small group of high-value repeat customers**. Without improvements to early retention, scaling acquisition would mostly increase churn rather than create sustainable growth.
+
+
 
 ## 💡 Business Recommendations
 
-### ✅ 1. Fix the First Experience, Not the Funnel Top
-Improving acquisition without fixing early retention **destroys LTV**.  
-Focus on:
-- First purchase experience
-- Delivery reliability
-- Post-purchase communication
+
+### 1. Fix the First-Repeat Moment, Not Traffic Volume
+The largest revenue and retention losses occur immediately after the first purchase. Rather than increasing acquisition spend, prioritize **first-repeat conversion within 7–30 days** by improving post-purchase experience, delivery reliability, and repeat-purchase incentives.
+
+**Why this matters:**  
+Even a small uplift in first-repeat rate will compound revenue more effectively than scaling top-of-funnel traffic in a high-churn environment.
 
 ---
 
-### ✅ 2. Redefine Growth KPIs
-Shift success metrics from:
-> **“How many customers did we acquire?”**  
-to  
-> **“How many customers reached Month 2?”**
+### 2. Design the Funnel Around High-Value Customers
+Revenue retention consistently outperforms user retention, proving that a **small subset of customers drives long-term value**. Identify and actively protect these high-value customers through early loyalty tagging, personalized offers, and prioritized fulfillment.
+
+**Why this matters:**  
+Shifting focus from average customers to high-value segments reduces revenue concentration risk while improving LTV predictability.
 
 ---
 
-### ✅ 3. Segment Retention Strategies by Cohort Health
-- Strong cohorts → Upsell & loyalty
-- Weak cohorts → Diagnose acquisition channel quality
+### 3. Optimize for Value Expansion, Not Just Conversion
+Revenue movements are driven primarily by **Average Order Value**, not transaction volume. Invest in pricing strategy, product bundling, cross-sell logic, and intelligent recommendations to increase basket value without increasing traffic dependency.
+
+**Why this matters:**  
+Value-based growth scales more efficiently and is less sensitive to rising acquisition costs in competitive e-commerce markets.
 
 ---
 
-### ✅ 4. Use Cohort Benchmarks for Decision-Making
-Instead of reacting to short-term dips, compare:
-> New cohorts vs historical best cohorts
+### 4. Double Down on Mid-Range Pricing as the Core Revenue Engine
+Mid-range products contribute the highest share of revenue, outperforming both budget and premium segments. Position this segment as the **default growth engine**, supported by clear value messaging, comparisons, and repeat-purchase incentives.
 
-This creates **contextual, bias-free performance evaluation**.
-
----
-
-## 🚀 What Makes This Project Stand Out
-
-- Business-first framing (not tool-driven)
-- Clear separation of **symptom vs cause**
-- Scalable cohort logic using DAX measures
-- Performance-optimized model
-- Executive-friendly storytelling
+**Why this matters:**  
+Mid-range pricing balances affordability and margin, making it the most scalable segment for sustainable growth.
 
 ---
 
-## 📌 Final Takeaway
+### 5. Treat Churn as a Product Signal, Not a Marketing Metric
+Persistently high churn across cohorts indicates structural experience gaps rather than campaign inefficiencies. Use churn patterns to inform improvements in checkout UX, delivery SLAs, returns, and customer communication rather than increasing promotional spend.
 
-Cohort analysis transforms raw data into **behavioral intelligence**.  
-This project demonstrates how **retention, not acquisition**, is the real growth lever—and how data teams can surface that truth clearly and decisively.
+**Why this matters:**  
+Reducing friction in the core experience delivers longer-lasting impact than short-term promotional fixes.
 
 ---
 
-**Thanks for stopping by!**  
-If you’re interested in retention analytics, revenue diagnostics, or Power BI best practices, feel free to connect.
+### 6. Shift Measurement From Growth to Efficiency
+Adopt lifecycle-focused KPIs such as **first-repeat conversion rate, revenue retention, and early retention slope**, instead of relying solely on total revenue or traffic growth.
+
+**Why this matters:**  
+In 2026, competitive advantage comes from **efficient growth**, not raw scale.
+
+---
+
+### 🎯 Strategic Takeaway
+Sustainable growth for this e-commerce business will come from **improving early customer experience, expanding value per customer, and protecting high-value users**, rather than increasing acquisition volume. This approach aligns growth with profitability, resilience, and long-term customer equity.
+
