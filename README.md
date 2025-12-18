@@ -107,7 +107,7 @@ The dashboard includes side-by-side comparisons between:
 
 Metrics such as total revenue and average revenue per user update dynamically based on selections.
 
----
+![Cohorts Page](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Cohort%20Page.gif)
 
 ### 🔹 Product Performance Deep Dive
 The Products view includes:
@@ -128,6 +128,8 @@ A built-in **Key Influencers visual** helps explore which factors are most assoc
 This enables exploratory analysis without writing additional queries.
 
 
+![Products Page](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Products%20Page.gif)
+
 ## 🔑 Key Insights
 
 
@@ -137,7 +139,7 @@ Across all cohorts, the biggest drop in retention happens immediately after the 
 
 This consistency tells us that the problem isn’t seasonal or campaign-related. Instead, it points to a **fundamental gap in the early customer experience**. In simple terms, many customers don’t see enough value or reason to come back after their first order. Factors such as delivery experience, post-purchase communication, perceived pricing, onboarding, or the absence of strong repeat-purchase incentives are likely contributing to this early drop-off.
 
-
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Retention%20%25.png" >
 
 ### 2. Churn Remains High and Hasn’t Improved Over Time
 
@@ -147,6 +149,9 @@ This suggests that key parts of the funnel haven’t meaningfully changed over t
 
 High churn by itself isn’t unusual for an e-commerce business, especially one driven by one-time purchases. However, when churn remains this flat across cohorts, it signals that the business isn’t learning or improving fast enough at the funnel level.
 
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Churn%20%25.png" >
+
+
 ### 3. Revenue Holds Up Better Than Customer Retention
 
 Even though most customers don’t return, revenue doesn’t fall off as quickly. Across several cohorts, **15–25% of the original revenue is still being retained** at later stages, despite a much smaller number of active users.
@@ -155,6 +160,7 @@ This gap between user retention and revenue retention shows that a **small group
 
 This creates a clear trade-off. On one hand, it’s a strong signal that high-value customers exist and can be nurtured. On the other, it also means revenue is increasingly concentrated in a narrow segment, making the business more exposed if those customers churn.
 
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Revenue%20Retention%20%25.png" >
 
 ### 4. Repeat Customers Are Far More Valuable, but Underutilized
 
@@ -164,12 +170,18 @@ This shows that the business is currently **volume-led rather than loyalty-led**
 
 Even a modest improvement in converting one-time buyers into repeat customers would significantly improve revenue efficiency and reduce dependency on constant acquisition.
 
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Total%20Revenue.png" >
 
-### 5. Revenue Moves More With Order Value Than With Demand
+### 5. Revenue Is Primarily Controlled by Order Value, Not Order Volume
 
-The Key Influencers analysis shows that **Average Order Value (AOV)** has the biggest impact on revenue, both when revenue goes up and when it drops. Units sold matter, but they play a secondary role. In practice, changes in pricing, product mix, and basket composition affect revenue more than the sheer number of transactions.
+The Key Influencers analysis makes one pattern very clear: **Average Order Value (AOV) is the strongest lever behind revenue movement**, both when revenue increases and when it declines. When AOV rises, revenue increases meaningfully; when AOV falls, revenue drops by a similar magnitude. Changes in units sold do matter, but their impact is consistently secondary.
 
-This means revenue performance here is largely **value-driven**, not demand-driven. Traffic and orders are present, but how effectively each order is monetized varies. As a result, strategies like smart bundling, cross-sell, and pricing optimization are likely to have a bigger impact on revenue than simply pushing for more traffic.
+What’s important here is the symmetry. Revenue doesn’t just benefit from higher AOV — it is **highly sensitive to AOV declines as well**. This tells us that revenue volatility is driven more by **pricing, product mix, and basket composition** than by fluctuations in traffic or demand.
+
+In practical terms, demand exists and customers are placing orders. The bigger challenge is **how effectively each order is monetized**. This makes value-focused strategies — such as smarter bundling, cross-sell placement, pricing discipline, and protecting basket size — far more impactful than simply driving more traffic or orders.
+
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Key%20Influencers%20Increase.png"  height=500>
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Key%20Influencers%20Decrease.png"  height=500>
 
 
 ### 6. Mid-Range Products Drive the Majority of Revenue
@@ -178,12 +190,15 @@ When revenue is broken down by price category, **mid-range and value-priced prod
 
 Customers appear to be price-aware but not purely bargain-driven. The strongest product–market fit sits in accessible price bands where value feels clear and risk is low. Premium products, on the other hand, don’t scale as effectively without stronger brand trust or loyalty signals to support higher prices.
 
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Revenue%20By%20Category.png" >
 
 ### 7. New Customer Cohorts Are Getting Smaller Over Time
 
 Cohort sizes steadily decline from early 2024 into late 2025, with recent cohorts shrinking to low double-digit and even single-digit user counts. Fewer customers are making it into the cohorts in the first place.
 
 This points to **issues at the bottom of the funnel**, rather than a lack of interest. Potential contributors include lower conversion to completed purchases, stricter order qualification rules, or added friction during checkout and payment. When this is combined with already weak retention, it becomes clear that increasing traffic alone would not meaningfully improve performance.
+
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Cohort%20Users.png" height=500 >
 
 ### 8. Early Retention Lacks Momentum and Is Inconsistent Across Cohorts
 
@@ -193,6 +208,8 @@ More importantly, the slopes are **inconsistent across cohorts**. Positive early
 
 In practical terms, customers who survive the initial drop are not being pulled into a repeat habit. Short-term lifecycle touchpoints — such as post-purchase engagement, timely reminders, replenishment cues, or incentives — are not strong enough to create accelerating repeat behavior. Without early momentum, retention remains fragile and struggles to recover later in the lifecycle.
 
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Retention%20Slope.png" height=600 >
+
 ### 9. Looking Across All Metrics, the Story Is Consistent
 
 When retention, churn, revenue retention, cohort size, pricing, and customer value are viewed together, they all point to the same underlying pattern.
@@ -200,7 +217,6 @@ When retention, churn, revenue retention, cohort size, pricing, and customer val
 The business does **not appear to have a demand problem**. Customers are finding the site and making purchases. Instead, performance is constrained by **funnel efficiency and early customer experience**, where most value is lost soon after the first transaction.
 
 At the same time, revenue is becoming increasingly **concentrated among a small group of high-value repeat customers**. Without improvements to early retention, scaling acquisition would mostly increase churn rather than create sustainable growth.
-
 
 
 ## 💡 Business Recommendations
