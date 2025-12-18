@@ -19,11 +19,10 @@ You can find the link to Kaggle dataset [here.](https://www.kaggle.com/datasets/
 |1.   |  [Business Problem](#Business-problem)                              |
 |2.   |  [Key Business Questions](#key-business-questions)                              |
 |3.   |  [Analytical Approach](#analytical-approach)                              |
-|4.   |  [Why Cohort Analysis?](#why=cohort-analysis?)                              |
-|5.   |  [Data Architecture And Governance](#data-architecture-and-governance)                              |
-|6.   |  [Dashboard Highlights And Features](#dashboard-highlights-and-features)                              |
-|7.   |  [Key Insights](#key-insights)                              |
-|8.   |  [Business Recommendations](#business-recommendations)                              |
+|4.   |  [Data Architecture And Governance](#data-architecture-and-governance)                              |
+|5.   |  [Dashboard Highlights And Features](#dashboard-highlights-and-features)                              |
+|6.   |  [Key Insights](#key-insights)                              |
+|7.   |  [Business Recommendations](#business-recommendations)                              |
 
 
 ## 🔍Business Problem
