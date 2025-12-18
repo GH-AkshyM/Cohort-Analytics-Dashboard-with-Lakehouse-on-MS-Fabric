@@ -56,7 +56,7 @@ To make better decisions around retention, marketing spend, and long-term growth
 [(Back to top)](#table-of-contents)
 
 
-## Analytical Approach
+## 📊Analytical Approach
 To address these gaps, I built a **Customer Cohort Analysis framework** that shifts the focus from aggregate monthly KPIs to **customer behavior over time**.
 
 Customers were grouped into cohorts based on their **first purchase month** and tracked across subsequent periods to analyze:
@@ -71,7 +71,7 @@ This approach enabled a lifecycle-driven understanding of growth and revealed st
 [(Back to top)](#table-of-contents)
 
 
-## 🧠Why Cohort Analysis?
+## 🎯Why Cohort Analysis?
 
 Cohort analysis reveals insights that aggregate metrics hide:
 | What Aggregate KPIs Suggest | What Cohort Analysis Might Reveal             |
@@ -99,7 +99,7 @@ Each cohort answers:
 [(Back to top)](#table-of-contents)
 
 
-## 🏗️Data Architecture And Governance
+## 🗂Data Architecture And Governance
 
 
 This project uses a **Microsoft Fabric Lakehouse** with a clear separation between **data preparation** and **analytics**.
