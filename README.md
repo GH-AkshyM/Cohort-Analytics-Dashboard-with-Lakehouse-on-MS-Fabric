@@ -211,7 +211,7 @@ This shows that the business is currently **volume-led rather than loyalty-led**
 
 Even a modest improvement in converting one-time buyers into repeat customers would significantly improve revenue efficiency and reduce dependency on constant acquisition.
 
-<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Average%20Revenue.png" width=400> <img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Total%20Revenue.png" width=400 align=right>
+<img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Average%20Revenue.png" width=400> <img src="https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/Screenshots/Total%20Revenue.png" width=400>
 
 
 ### 5. Revenue Is Primarily Controlled by Order Value, Not Order Volume
