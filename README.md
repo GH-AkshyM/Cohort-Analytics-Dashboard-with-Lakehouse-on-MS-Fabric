@@ -303,6 +303,6 @@ Reducing friction at these early touchpoints directly addresses the stage where 
 ## You can explore the report [here](https://github.com/GH-AkshyM/Cohort-Analytics-Dashboard-with-Lakehouse-on-MS-Fabric/blob/main/PBIX%20file/Cohort%20Analysis%20with%20Lakehouse(Direct%20Query).pbix). Download and open using Power BI Desktop. 
 
 ## Check out some of my other works: 
-- 📦 **[Revenue Health Dashboard](https://github.com/GH-AkshyM/Revenue-Health-Dashboard/tree/main)** – Executive Revenue Dashboard for Higher-Ups, Simplyfy monthly reports.  
+- 📦 **[Revenue Health Dashboard](https://github.com/GH-AkshyM/Revenue-Health-Dashboard/tree/main)** – Executive Revenue Dashboard for Higher-Ups, Simplify monthly reports.  
 - 🧠 **[HR Attrition Analytics with Dataflow Gen2](https://github.com/GH-AkshyM/Hr-Attrition-Analytics-Dashboard)** – A Clean Minimalistic look into Attrition Analytics with Insights Hard-coded.  
 - 📈 **[Sentiment Analysis Using BERT](https://github.com/GH-AkshyM/Sentiment-Analysis-using-BERT)** – Using SQL and Python pre-trained models for analysing customer reviews.
